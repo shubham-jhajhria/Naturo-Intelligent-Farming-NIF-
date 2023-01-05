@@ -1,8 +1,8 @@
 from flask import *
 import pickle
-import mysql.connector as sql
-db=sql.connect(user="root",host="localhost",password="964114",database="NIF")
-cursor= db.cursor()
+#import mysql.connector as sql
+#db=sql.connect(user="root",host="localhost",password="964114",database="NIF")
+#cursor= db.cursor()
 
 app = Flask(__name__,template_folder='template')
 model = pickle.load(open('model.pkl', 'rb'))
@@ -25,9 +25,9 @@ def predict():
         else:
             pred = model.predict([[N, P, K, temperature,humidity,ph,rainfall]])
             pred = str(pred[0])
-            qry="insert into dataset values(%d,%d,%d,%d,%d,%d,%d,'%s')"%(N,P,K,temperature,humidity,ph,rainfall,pred)
-            cursor.execute(qry)
-            db.commit()
+            #qry="insert into dataset values(%d,%d,%d,%d,%d,%d,%d,'%s')"%(N,P,K,temperature,humidity,ph,rainfall,pred)
+            #cursor.execute(qry)
+            #db.commit()
             return render_template('input.html', results = "You can grow:"+pred)
     else:
         pred=0
