@@ -1,5 +1,7 @@
 # Kindly Procced to the below link for the project website
 [LINK](http://nif.pythonanywhere.com/)
+
+
 NATURO INTELLIGENT FARMING which takes into consideration all the appropriate parameters including temperature, rainfall, location and soil condition, to predict crop suitability. This system provides crop recommendations to farmers using machine learning algorithms.
 
 ABSTRACT
